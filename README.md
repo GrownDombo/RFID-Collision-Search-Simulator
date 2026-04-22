@@ -27,5 +27,5 @@ Prefix 기반 질의를 통해 태그를 탐색합니다.
 - 탐색 로직과 입력/출력 역할을 분리하여 구조를 정리
 
 ## Sample Output
-<img width="332" height="270" alt="image" src="https://github.com/user-attachments/assets/e91d0fb5-7494-4f74-9938-85c4cd879f86" />
-<img width="330" height="818" alt="image" src="https://github.com/user-attachments/assets/e4a87871-b320-4f96-a57c-34dd2fc28af8" />
+<img width="326" height="3762" alt="JKj8lJvII0" src="https://github.com/user-attachments/assets/78c3eab7-3a8c-49b5-a0e6-beab21c9ff10" />
+
