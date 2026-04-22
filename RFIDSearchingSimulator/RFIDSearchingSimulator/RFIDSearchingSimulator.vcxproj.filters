@@ -13,10 +13,96 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fuction">
+      <UniqueIdentifier>{60e0cff1-db82-495f-ab9e-ed9dbef6ce37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fuction\StringUtil">
+      <UniqueIdentifier>{9978e9a1-b544-4858-b63e-f38c04746a7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fuction\StringUtil\Header">
+      <UniqueIdentifier>{b3979cb9-16ba-462a-901b-2d43171f328a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fuction\StringUtil\Source">
+      <UniqueIdentifier>{b14a3c7b-72cf-4027-a572-e2f10eb651a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fuction\TagSystem">
+      <UniqueIdentifier>{a849848a-ba0d-4352-b66a-5be87b05a4f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fuction\TagSystem\Header">
+      <UniqueIdentifier>{10ce99a2-5ed3-4e74-9ac8-a296215eaf53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fuction\TagSystem\Interface">
+      <UniqueIdentifier>{297045e3-7db9-4ed1-8529-bff36acd0cf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fuction\TagSystem\Source">
+      <UniqueIdentifier>{7cb5ccab-1953-4757-9b9c-dbda80e2836d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RFIDSearchingSimulator.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="StringUtil.cpp">
+      <Filter>Fuction\StringUtil\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TagProvider_Factory.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClCompile>
+    <ClCompile Include="TagProvider_Factory.cpp">
+      <Filter>Fuction\TagSystem\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TagProviderManual.cpp">
+      <Filter>Fuction\TagSystem\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TagProviderPreset.cpp">
+      <Filter>Fuction\TagSystem\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TagProviderRandom.cpp">
+      <Filter>Fuction\TagSystem\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TagSearcherIterative.cpp">
+      <Filter>Fuction\TagSystem\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TagSearcherRecursive.cpp">
+      <Filter>Fuction\TagSystem\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TagUIConsole.cpp">
+      <Filter>Fuction\TagSystem\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StringUtil.h">
+      <Filter>Fuction\StringUtil\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="RFIDTag.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TagProviderManual.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TagProviderPreset.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TagProviderRandom.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ITagProvider.h">
+      <Filter>Fuction\TagSystem\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="TagSearcherIterative.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TagSearcherRecursive.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TagUIConsole.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ITagUI.h">
+      <Filter>Fuction\TagSystem\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ITagSearcher.h">
+      <Filter>Fuction\TagSystem\Interface</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

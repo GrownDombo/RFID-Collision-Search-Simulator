@@ -124,6 +124,28 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="RFIDSearchingSimulator.cpp" />
+    <ClCompile Include="StringUtil.cpp" />
+    <ClCompile Include="TagProviderManual.cpp" />
+    <ClCompile Include="TagProviderPreset.cpp" />
+    <ClCompile Include="TagProviderRandom.cpp" />
+    <ClCompile Include="TagProvider_Factory.cpp" />
+    <ClCompile Include="TagProvider_Factory.h" />
+    <ClCompile Include="TagSearcherIterative.cpp" />
+    <ClCompile Include="TagSearcherRecursive.cpp" />
+    <ClCompile Include="TagUIConsole.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ITagProvider.h" />
+    <ClInclude Include="ITagSearcher.h" />
+    <ClInclude Include="ITagUI.h" />
+    <ClInclude Include="RFIDTag.h" />
+    <ClInclude Include="StringUtil.h" />
+    <ClInclude Include="TagProviderManual.h" />
+    <ClInclude Include="TagProviderPreset.h" />
+    <ClInclude Include="TagProviderRandom.h" />
+    <ClInclude Include="TagSearcherIterative.h" />
+    <ClInclude Include="TagSearcherRecursive.h" />
+    <ClInclude Include="TagUIConsole.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
