@@ -1,0 +1,36 @@
+# Visual Studio working directory
+.vs/
+
+# Visual Studio user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# C++ database and browsing files
+*.VC.db
+*.VC.opendb
+ipch/
+
+# Build output directories
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# MSBuild / linker intermediate files
+*.obj
+*.o
+*.pch
+*.pdb
+*.ilk
+*.idb
+*.tlog
+*.lastbuildstate
+*.log
+
+# Executables and libraries produced by local builds
+*.exe
+*.dll
+*.lib
+*.exp
