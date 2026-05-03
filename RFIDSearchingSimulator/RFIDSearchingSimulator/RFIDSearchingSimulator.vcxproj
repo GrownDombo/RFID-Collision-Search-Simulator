@@ -129,7 +129,6 @@
     <ClCompile Include="TagProviderPreset.cpp" />
     <ClCompile Include="TagProviderRandom.cpp" />
     <ClCompile Include="TagProvider_Factory.cpp" />
-    <ClCompile Include="TagProvider_Factory.h" />
     <ClCompile Include="TagSearcherIterative.cpp" />
     <ClCompile Include="TagSearcherRecursive.cpp" />
     <ClCompile Include="TagUIConsole.cpp" />
@@ -143,6 +142,7 @@
     <ClInclude Include="TagProviderManual.h" />
     <ClInclude Include="TagProviderPreset.h" />
     <ClInclude Include="TagProviderRandom.h" />
+    <ClInclude Include="TagProvider_Factory.h" />
     <ClInclude Include="TagSearcherIterative.h" />
     <ClInclude Include="TagSearcherRecursive.h" />
     <ClInclude Include="TagUIConsole.h" />

@@ -45,9 +45,6 @@
     <ClCompile Include="StringUtil.cpp">
       <Filter>Fuction\StringUtil\Source</Filter>
     </ClCompile>
-    <ClCompile Include="TagProvider_Factory.h">
-      <Filter>Fuction\TagSystem\Header</Filter>
-    </ClCompile>
     <ClCompile Include="TagProvider_Factory.cpp">
       <Filter>Fuction\TagSystem\Source</Filter>
     </ClCompile>
@@ -84,6 +81,9 @@
       <Filter>Fuction\TagSystem\Header</Filter>
     </ClInclude>
     <ClInclude Include="TagProviderRandom.h">
+      <Filter>Fuction\TagSystem\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TagProvider_Factory.h">
       <Filter>Fuction\TagSystem\Header</Filter>
     </ClInclude>
     <ClInclude Include="ITagProvider.h">

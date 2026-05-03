@@ -1,0 +1,78 @@
+# GitHub Actions 화면에 표시될 워크플로 이름입니다.
+name: Build and Release
+
+# v1.0.0, v1.2.3 같은 버전 태그가 GitHub에 push될 때만 Release를 만듭니다.
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+# GitHub Release 생성과 파일 업로드에는 저장소 콘텐츠 쓰기 권한이 필요합니다.
+permissions:
+  contents: write
+
+# 같은 태그로 워크플로가 중복 실행될 때 서로 꼬이지 않도록 이전 실행을 취소합니다.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: true
+
+# 모든 run 단계에서 PowerShell Core를 사용하도록 명시합니다.
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build-and-release:
+    # Actions 로그에서 보이는 작업 이름입니다.
+    name: Build x64 executable and publish GitHub Release
+
+    # Visual Studio/MSBuild가 포함된 Windows 러너에서 C++ 솔루션을 빌드합니다.
+    runs-on: windows-latest
+
+    # 여러 단계에서 반복해서 쓰는 경로와 빌드 옵션을 한 곳에 모아둡니다.
+    env:
+      SOLUTION_PATH: RFIDSearchingSimulator\RFIDSearchingSimulator.sln
+      BUILD_CONFIGURATION: Release
+      BUILD_PLATFORM: x64
+      ASSET_PATH: RFIDSearchingSimulator\x64\Release\RFIDSearchingSimulator.exe
+
+    steps:
+      # 태그가 찍힌 정확한 소스 코드를 러너로 내려받습니다.
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # msbuild 명령을 PATH에 추가해 Visual Studio 설치 경로를 직접 쓰지 않아도 되게 합니다.
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v3
+        with:
+          # 64비트 MSBuild를 사용해 x64 Release 빌드와 맞춥니다.
+          msbuild-architecture: x64
+
+      # Visual Studio 솔루션을 Release|x64 구성으로 빌드합니다.
+      - name: Build Release x64
+        run: |
+          msbuild $env:SOLUTION_PATH `
+            /m `
+            /p:Configuration=$env:BUILD_CONFIGURATION `
+            /p:Platform=$env:BUILD_PLATFORM `
+            /v:minimal
+
+      # Release에 첨부할 exe가 실제로 만들어졌는지 먼저 확인합니다.
+      - name: Verify executable exists
+        run: |
+          if (-not (Test-Path -LiteralPath $env:ASSET_PATH)) {
+            throw "Release asset was not found: $env:ASSET_PATH"
+          }
+
+      # 태그 이름과 같은 GitHub Release를 만들고 exe 파일을 직접 첨부합니다.
+      - name: Create GitHub Release
+        env:
+          # GitHub CLI가 현재 저장소에 Release를 만들 수 있도록 기본 토큰을 전달합니다.
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $assetWithLabel = "$env:ASSET_PATH#RFIDSearchingSimulator.exe"
+
+          gh release create $env:GITHUB_REF_NAME $assetWithLabel `
+            --verify-tag `
+            --title $env:GITHUB_REF_NAME `
+            --generate-notes
