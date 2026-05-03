@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 
+#include <string>
+
 #include "ITagUI.h"
 #include "ITagProvider.h"
 #include "TagUIConsole.h"
@@ -8,6 +10,17 @@
 #include "TagSearcherIterative.h"
 #include "ITagSearcher.h"
 #include "RFIDTag.h"
+
+namespace
+{
+    void WaitForExit()
+    {
+        std::cout << std::endl << "종료하려면 Enter 키를 누르세요...";
+
+        std::string ignored;
+        std::getline(std::cin, ignored);
+    }
+}
 
 int main()
 {
@@ -20,6 +33,7 @@ int main()
     if (tagProvider == nullptr)
     {
         ui.ShowError("TAG Provider 생성에 실패했습니다.");
+        WaitForExit();
         return 1;
     }
 
@@ -35,4 +49,7 @@ int main()
     ui.ShowSearchResult(recursiveSearcher->GetName(), recursiveResult);
     ui.ShowSearchResult(iterativeSearcher->GetName(), iterativeResult);
     ui.ShowComparison(recursiveSearcher->GetName(), recursiveResult, iterativeSearcher->GetName(), iterativeResult);
+
+    WaitForExit();
+    return 0;
 }
