@@ -14,8 +14,8 @@ TagProviderRandom::TagProviderRandom(ITagUI& tagUI) : m_tagUI(tagUI)
 
 std::vector<RFIDTag> TagProviderRandom::GetTags()
 {
-    m_tagUI.ShowMessage("RandomÀ¸·Î Tag Data »ı¼ºÇÕ´Ï´Ù.");
-    const int count = m_tagUI.ReadTagCount("»ı¼ºÇÒ ·£´ı TAG °³¼ö (1~16): ", 1, 16);
+    m_tagUI.ShowMessage("Randomìœ¼ë¡œ Tag Data ìƒì„±í•©ë‹ˆë‹¤.");
+    const int count = m_tagUI.ReadTagCount("ìƒì„±í•  ëœë¤ TAG ê°œìˆ˜ (1~16): ", 1, 16);
 
     std::random_device rd;
     std::mt19937 gen(rd());

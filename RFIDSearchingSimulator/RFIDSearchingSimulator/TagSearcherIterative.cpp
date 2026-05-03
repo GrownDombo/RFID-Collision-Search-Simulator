@@ -3,7 +3,7 @@
 
 std::string TagSearcherIterative::GetName() const
 {
-    return "¹İº¹ ¹æ½Ä";
+    return "ë°˜ë³µ ë°©ì‹";
 }
 
 SearchResult TagSearcherIterative::Search(const std::vector<RFIDTag>& tags) const

@@ -10,8 +10,8 @@ TagProviderManual::TagProviderManual(ITagUI& tagUI) : m_tagUI(tagUI)
 
 std::vector<RFIDTag> TagProviderManual::GetTags()
 {
-    m_tagUI.ShowMessage("»ç¿ëÀÚ°¡ Á÷Á¢ ÀÔ·ÂÇÏ¿© Tag Data »ı¼ºÇÕ´Ï´Ù.");
-    const int count = m_tagUI.ReadTagCount("ÀÔ·ÂÇÒ TAG °³¼ö (1~16): ", 1, 16);
+    m_tagUI.ShowMessage("ì‚¬ìš©ìê°€ ì§ì ‘ ì…ë ¥í•˜ì—¬ Tag Data ìƒì„±í•©ë‹ˆë‹¤.");
+    const int count = m_tagUI.ReadTagCount("ì…ë ¥í•  TAG ê°œìˆ˜ (1~16): ", 1, 16);
 
     std::vector<RFIDTag> tags;
     tags.reserve(count);
@@ -22,12 +22,12 @@ std::vector<RFIDTag> TagProviderManual::GetTags()
     {
         while (true)
         {
-            const std::string message = std::to_string(i + 1) + "¹øÂ° 4bit TAG ÀÔ·Â: ";
+            const std::string message = std::to_string(i + 1) + "ë²ˆì§¸ 4bit TAG ì…ë ¥: ";
             const std::string tag = m_tagUI.ReadTag(message);
 
             if (usedTags.find(tag) != usedTags.end())
             {
-                m_tagUI.ShowError("Áßº¹µÈ TAGÀÔ´Ï´Ù. ´Ù¸¥ TAG¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                m_tagUI.ShowError("ì¤‘ë³µëœ TAGì…ë‹ˆë‹¤. ë‹¤ë¥¸ TAGë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
                 continue;
             }
 

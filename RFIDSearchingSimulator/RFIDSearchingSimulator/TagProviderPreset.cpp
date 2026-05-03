@@ -10,7 +10,7 @@ TagProviderPreset::TagProviderPreset(ITagUI& tagUI) : m_tagUI(tagUI)
 
 std::vector<RFIDTag> TagProviderPreset::GetTags()
 {
-    m_tagUI.ShowMessage("»çÀü¿¡ Á¤ÇØÁø Tag Data °¡Á®¿É´Ï´Ù.");
+    m_tagUI.ShowMessage("ì‚¬ì „ì— ì •í•´ì§„ Tag Data ê°€ì ¸ì˜µë‹ˆë‹¤.");
 
     const std::vector<std::string> rawTags = { "0010", "1101", "0011", "0101", "1010" };
 
