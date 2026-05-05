@@ -11,8 +11,23 @@
 #include "ITagSearcher.h"
 #include "RFIDTag.h"
 
+#ifdef _WIN32
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+#include <windows.h>
+#endif
+
 namespace
 {
+    void ConfigureConsoleEncoding()
+    {
+#ifdef _WIN32
+        SetConsoleOutputCP(CP_UTF8);
+        SetConsoleCP(CP_UTF8);
+#endif
+    }
+
     void WaitForExit()
     {
         std::cout << std::endl << "종료하려면 Enter 키를 누르세요...";
@@ -24,6 +39,8 @@ namespace
 
 int main()
 {
+    ConfigureConsoleEncoding();
+
     TagUIConsole ui;
     TagProvider_Factory factory(ui);
 
